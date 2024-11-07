@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "225593468637",
+    "project_id": "tuneventscamp",
+    "storage_bucket": "tuneventscamp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225593468637:android:2ad8654a58a585e6b69d34",
+        "android_client_info": {
+          "package_name": "com.akaflow.tunevents"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjTJaOOi0RryREWETJRXg516g7VDzPqg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
