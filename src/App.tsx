@@ -1,24 +1,17 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { Provider as PaperProvider } from 'react-native-paper';
+import { store } from './store/store';
+import AppNavigator from './navigation/AppNavigator';
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  return (
+    <Provider store={store}>
+      <PaperProvider>
+        <AppNavigator />
+      </PaperProvider>
+    </Provider>
+  );
+};
 
 export default App;
