@@ -10,9 +10,10 @@ import EventDetailsScreen from '../screens/EventDetailsScreen';
 import AuthScreen from '../screens/AuthScreen';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { theme } from '../styles/theme';
+import { RootStackParamList, MainTabParamList } from '../types/navigation';
 
-const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator<MainTabParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const MainTabs = () => (
   <Tab.Navigator
@@ -57,7 +58,11 @@ const AppNavigator = () => {
         ) : (
           <>
             <Stack.Screen name="MainTabs" component={MainTabs} />
-            <Stack.Screen name="EventDetails" component={EventDetailsScreen} />
+            <Stack.Screen 
+              name="EventDetails" 
+              component={EventDetailsScreen}
+              options={{ headerShown: true, title: 'Detalhes do Evento' }}
+            />
           </>
         )}
       </Stack.Navigator>

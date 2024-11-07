@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../types/navigation';
 import { theme } from '../styles/theme';
 
 interface EventCardProps {
@@ -13,8 +15,10 @@ interface EventCardProps {
   };
 }
 
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'MainTabs'>;
+
 const EventCard = ({ event }: EventCardProps) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp>();
 
   return (
     <TouchableOpacity
